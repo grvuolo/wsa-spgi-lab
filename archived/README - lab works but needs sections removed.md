@@ -1,29 +1,16 @@
-# Lab 4310
-
-## WebSphere proactive CVE protection and memory leak remediation observed by Instana 
+# WebSphere proactive CVE protection and memory leak remediation observed by Instana 
 
 ![banner](./lab1-media/media/image1.jpeg)
 
-Last updated: January 2024
 
-IBM WebSphere Automation version 1.6.2
 
-Duration: 
-
-  - CVE protection: 60 minutes
-  - Memory leak investigation: 45 minutes
-
-Need support?
-
-- Kevin Postreich - kevinlp@us.ibm.com
-
-- Yi Tang - yitang@us.ibm.com
- 
 ## Introduction to IBM WebSphere Automation
 
 [<span class="underline">IBM WebSphere Automation</span>](https://www.ibm.com/cloud/websphere-automation) focuses on delivering value to existing WebSphere Application Server (WAS) environments by helping administrators reduce the cost, effort and risk of addressing common vulnerabilities, automating tasks and remediating capacity incidents.
 
 It removes manual toil so that your team can spend more time innovating while minimizing the cost of extending the life and maximizing the ROI of your WebSphere investments.
+
+In conversations with customers, the same three concerns repeatedly come up. Organizations must keep their IT estate secure, compliant amd resilient to disruption, they must keep it running optimally, and they must reduce costs and maximize ROI.
 
 WebSphere Automation helps organizations gain visibility, operational efficiencies, and cost savings quickly by extending the life of WebSphere investments and giving teams time to focus on unlocking new value and fixing the imbalance of pure maintenance versus innovation tasks. It provides the following benefits:
 
@@ -33,7 +20,7 @@ WebSphere Automation helps organizations gain visibility, operational efficienci
 
   - Augmented operational experience with access to simplified and consolidated information that enables teams to act.
 
-
+With WebSphere Automation, security, business efficiency and resilience become standard. IBM can meet you wherever you are in your optimization and automation journeys to help you quickly deliver value and increase ROI, while laying a solid automation foundation to support future growth.
 
 IBM WebSphere Automation is a stand-alone product that runs on Red Hat OpenShift. Entitlement to Red Hat OpenShift is included with IBM WebSphere Automation but must be installed separately. As part of IBM Automation platform, WebSphere Automation includes containerized components and common software services on top of a common automation layer, to manage WebSphere incidents, hybrid applications, and cost with complete observability, governance, and compliance.
 
@@ -42,97 +29,55 @@ You can deploy it virtually anywhere through containers that are supported by Re
 
 ## Accessing the lab environment
 
-If you are doing this lab as part of an instructor led workshop (virtual or face to face), an environment has already been provisioned for you. The instructor will provide the details for accessing the lab environment.
+An environment is provisioned for you for this lab session. The instructor or lab proctor can provide details for accessing the lab environment.
 
-Otherwise, you will need to reserve an environment for the lab. You can obtain one here. Follow the on-screen instructions for the “**Reserve now**” option.
+The lab environment contains seven Linux VMs. 
 
-<https://techzone.ibm.com/my/reservations/create/65ae86397aace000116fac7a>
+**Note:** The `Student` VM is the only VM that you access directly in the lab environment.
 
+<img src="./lab1-media/media/4310-env-tiles.png" width="350"/>
 
-1.  Access the lab environment from your web browser. 
+<br/>
     
-    a. When the demo environment is provisioned, click on the **`environment tile`** to open its details view. 
+The Linux **`Student`** VM is the only VM that you directly interact. 
+The remaining VMs are the RedHat OpenShift Cluster VMs that hosts the  IBM WebSphere Automation solution. 
+  <br/>
 
-    b. Click on the **Published Service** link which will display a **Directory listing**  
+1.  Access the `Student` VM in the lab environment, from your web browser. 
     
-    c. Click on the **`vnc.html`** link to open the lab environment through the **noVNC** interface. 
+    On the **`Student`** tile, click the **`CentOS`** screen logo to open the lab environment. 
     
-    ![](./lab1-media/media/vnc-link.png)
+    <img src="./lab1-media/media/TechZoneWorkstationLogin.png" width="150"/>
     
-    d. Click the **`Connect`** button 
+2.  If a login screen is displayed, log in with the following credentials:
     
-      ![](./lab1-media/media/vnc-connect.png)
-
-    e. Enter the password as:  **`passw0rd`**. Then click the **`Send Credentials`** button to access the lab environment. 
-
-    > Note: That is a numeric zero in passw0rd  
-
-      ![](./lab1-media/media/vnc-password.png)
-
-
-    IBM WebSphere Automation is pre-installed in the OCP cluster hosted on the VMs.
-	 
-	 <br>
-	 
-
-3. The Published Service provides access to the **STUDENT** VM through the noVNC interface for the lab environment. 
-
-    All the WebSphere **images** and **iFixes** required for the lab are pre-installed on the VM:
-
-    - /opt/IBM/WebSphere/Liberty20009/
-
-    - /opt/IBM/WebSphere/AppServer9057/
-
-    <br>
-
+    User ID `ibmuser` 
+    
+    Password `engageibm`.
+    
 	
-5.  Once you log in to the Student VM you will see the Desktop, which contains all the programs that you will be using (browsers, terminal, etc.)
+4.  The desktop opens, which contains all the programs that you use (Firefox web browser, Terminal, File Explorer) during the session.
 
-    The login credentials for the **STUDENT”** image is:
- 
-     - User ID: **`ibmuser`**
+ <img src="./lab1-media/media/image8.png" />
 
-     - Password: **`engageibm`**
-	 
-	 <br>
- 
-     ![student vm screen](./lab1-media/media/image8.png)
-	 
-	 <br>
+
+  <br/>
+
 
 ## Tips for working in the lab environment     
 
-1.  You can resize the viewable area using the **`noVNC Settings`** options to resize the virtual desktop to fit your screen.
+1. The UI allows you to fit the viewing area to fit the browser window size that you are using.
 
-    a. From the environemnt VM, click on the **`twisty`** on the noNC control pane to open the menu.  
-
-    ![fit to window](./lab1-media/media/z-twisty.png)
-
-    b. To increase the visible area, click on `Settings > Scaling Mode` and set the value to `Remote Resizing`
-      
-     ![fit to window](./lab1-media/media/z-remote-resize.png)
+    <img src="./lab1-media/media/FitToWindow.png" width="250"/>
 
 
-2.  You can copy / paste text from the lab guide into the lab environment using the clipboard in the noVNC viewer. 
+2.  You can copy and paste text from the lab guide into the lab environment by using **`Send Text`** clipboard. 
    
-    a. Copy the text from the lab guide that you want to paste into the lab environment
-    
-    b. Click the **`Clipboard`** icon and **`paste`** the text into the noVNC clipboard
+    <img src="./lab1-media/media/CopyPaste.png" width="280"/>)
 
-    ![fit to window](./lab1-media/media/paste.png)
-    
-    c. Paste the text into the VM, such as to a terminal window, browser window, etc. 
+    <br>
 
-    d. Click on the **`clipboard`** icon again to close the clipboard
-
-    > **NOTE:** Sometimes pasting into a Terminal window in the VM does not work consistently. 
-    
-    > In this case you might try again, or open another Terminal Window and try again, or  paste the text into a **Text Editor** in the VM, and then paste it into the Terminal window in the VM. 
-
-    <br/>   
-
-
-## Section 1 - Set up IBM WebSphere Automation in the lab environment 
+## 1.0 Set up IBM WebSphere Automation in the lab environment 
 
 
 1. Log in to the Student VM. You see the Desktop, which contains all the programs that you use (browsers, terminal) in this session.
@@ -166,17 +111,6 @@ Otherwise, you will need to reserve an environment for the lab. You can obtain o
         ls -l /home/ibmuser/WAS-Automation-LabFiles/techxchange/*
 
     ![](./lab1-media/media/4310-list-cloned-dir.png)
-
-
-
-
-3. (Optional) Open the `lab-commands.txt` file in an editor, to copy & paste commands throughout the lab. 
-
-   **TIP:** `You may use the lab-commands.txt file to copy & paste commands throught the lab.` 
-   
-        gedit /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab-commands.txt
-
-    <br/>       
 
 
 ### 1.1 Overview - Configuring WebSphere Automation
@@ -272,9 +206,20 @@ If the `wsa-setup.sh` script completed with **TEST PASSED**, you can proceed wit
 
 <br/>
 
-## Section 2 - Accessing the WebSphere Automation UI
+--------------------------------------------------------------------
 
+###  Continue the lab by expanding the sections below, as you progress
 
+--------------------------------------------------------------------
+
+<br/>
+
+### Section 2 - Accessing the WebSphere Automation UI
+
+<details> 
+    <summary><b><font color="dodgerblue">Click to expand:</font></b> Section 2 </font></b> - Accessing the WebSphere Automation UI</summary>
+
+## 2.0 Accessing the WebSphere Automation UI
 
 A WebSphere administrator sets up WebSphere Automation by registering and configuring WebSphere Application Servers and WebSphere Liberty servers. 
 
@@ -282,9 +227,7 @@ For this lab, WebSphere Automation is pre-installed on an OpenShift cluster. You
 
 1.  On the *Student VM*, open a browser and enter the following URL (there is a WebSphere Automation link on bookmark toolbar):
     
-  	 <a href="https://cpd-websphere-automation.apps.ocp.ibm.edu/zen/#/homepage"><span class="underline">https://cpd-websphere-automation.apps.ocp.ibm.edu/zen/#/homepage</span></a>
-
-   
+  	 <a href="https://cp-console.apps.ocp.ibm.edu/oidc/login.jsp#/homepage"><span class="underline">https://cp-console.apps.ocp.ibm.edu/oidc/login.jsp#/homepage</span></a>
 
 
     ![opening browser](./lab1-media/media/image10.png)
@@ -312,7 +255,7 @@ For this lab, WebSphere Automation is pre-installed on an OpenShift cluster. You
 
     <br/>
 	
-5.  View the `Application Runtimes` that are registered with IBM Automation.
+5.  View the Application Runtimes that are registered with IBM Automation.
 
     a. Click the menu icon in the upper left corner of the page.
 
@@ -342,18 +285,21 @@ For security monitoring, email notifications are sent when a new security bullet
 
 For server health monitoring, email notifications are sent when an investigation into a server health issue is started, when an investigation successfully completes, or when an investigation fails to complete. 
 
-You can also define custom notifications for events that occur in WebSphere Automation using webhook notifications for `Slack` and `ServiceNow`. 
-
 **Reference:** To review the information that is included in each email, see Example notification contents in the IBM WebSphere Automation documentation: 
 
 https://www.ibm.com/docs/en/ws-automation?topic=notifications-example-notification-contents
 
-
+</details>
 
 <br/>
 
-## Section 3 - Register WebSphere Application Server with IBM WebSphere Automation
+### Section 3 - Register WebSphere Application Server with IBM WebSphere Automation
 
+<details> 
+    <summary><b><font color="dodgerblue">Click to expand:</font></b> Section 3 </font></b> - Register WebSphere Application Server with IBM WebSphere Automation</summary>
+
+
+## 3.0 Register WebSphere Application Server with IBM WebSphere Automation 
 
 In this section, you run a Linux shell script to automatically register a WebSphere Application Server to IBM WebSphere Automation. 
 
@@ -404,42 +350,32 @@ In this section, you run the `register-was-server.sh` script to register a WebSp
 
     > Note: the URL is: https://cpd-websphere-automation.apps.ocp.ibm.edu/websphereauto/security
     
-    b. From the WebSphere Automation **`Security`** dashboard, confirm that the tWAS v9.0.5.7 server is registered in IBM Automation.
+    c. From the WebSphere Automation **`Security`** dashboard, confirm that the tWAS v9.0.5.7 server is registered in IBM Automation.
 
     > Note: It might take 15 - 30 seconds for the server to be displayed in the WebSphere Automation UI.
 
 
     ![](./lab1-media/media/image28.png)
 
+    </details>
 
     <br/>
 
-================================================================
 
-Now that WebSphere Automation is configured and you have registered a WebSphere application server, you may choose your learning journey by selecting one or both sections below: 
-
-  - `Section 4:` (60 minutes) - Get hands-on experience with the "Proactive CVE protection for WebSphere" use case.
-
-  - `Section 5:` (45 minutes) - Get hands-on experience with the "Memory leak investigation using IBM Automation and Instana" use case. 
-  
-
-================================================================
-
- <br/>
-
+### Section 4 - Proactive CVE protection for WebSphere with IBM WebSphere Automation
 
 <details> 
     <summary><b><font color="dodgerblue">Click to expand:</font></b> Section 4 - Proactive CVE protection for WebSphere with IBM WebSphere Automation</summary>
 
-
-## Section 4 - Proactive CVE protection for WebSphere with IBM WebSphere Automation
+  
+## 4.0 Proactive CVE protection for WebSphere Application Server 
 
 
 ### 4.1 Business Context for this scenario
 
 You are a WebSphere Administrator, part of a WebSphere Operations Team that is responsible for maintaining security compliance of the WebSphere estate in the enterprise. 
 
-A typical “as-is” process for maintaining security compliance for WebSphere environments is often a very manual and time consuming process, as illustrated below:  
+A typical “as-is” process for maintaining security compliance for WebSphere environments is often a very manual and time consuming process. 
 
 
 ![](./lab1-media/media/image2.png)
@@ -556,9 +492,9 @@ You apply the iFix that is documented in the IBM security bulletin to resolve th
 
     c.  The security bulletin is displayed in a new browser tab.
 
-    d. Close the `site cookies` dialog box, if displayed
+    d. Close the `site cookies` dialog box, if diplayed
     
-    e.  Review the security bulletin to learn about the vulnerability, versions of WebSphere affected, and options for remediating the vulnerability.
+    e  Review the security bulletin to learn about the vulnerability, versions of WebSphere affected, and options for remediating the vulnerability.
 
     ![](./lab1-media/media/imagev3-37.png)
  
@@ -583,11 +519,13 @@ You apply the iFix that is documented in the IBM security bulletin to resolve th
 
 ### 4.3.2 Update tWAS server v9.0.5.7 to fix the LOG4J vulnerability
 
+Automated installation of WebSphere and Liberty fixpaks and iFixes was introduced in IBM WebSphere Automation in version 1.4.
+
 You can automatically deploy fixes to servers in your managed server inventory through the WebSphere Automation UI. You must have a user profile with at least the **Modify WebSphere inventory** permission, and the servers that you want to fix must be registered and configured for fix installation with WebSphere Automation.
 
 In this section, you leverage the built-in capabilities in IBM WebSphere Automation to automatically prepare and install the recommended iFix to the traditional WebSphere 9.0.5.7 server to remove the Log4J vulnerability reported as **CVE-2021-44228**.
 
-There are a couple of additional components in the product to support this use case:
+There are a couple of additional components now included in the product to support this use case:
 
   - **Fix manager**
     
@@ -688,7 +626,28 @@ After you select the fix, WebSphere Automation provides two options:
     ![](./lab1-media/media/image89.png)
 
 
-2. Install the fix to resolve the CVE.
+2. Stop the WebSphere Application Server: 
+
+    a. Return to a Terminal window in the VM
+
+    b. Run the `stopServer.sh` command below 
+    
+        /opt/IBM/WebSphere/AppServer9057/bin/stopServer.sh tWAS_9057_server -username wasadmin -password wasadmin
+
+    ![](./lab1-media/media/image89-1.png)    
+
+	|         |           |  
+    | ------------- |:-------------|
+    | ![](./lab1-media/media/image4.png?cropResize=50,50)   | <strong>TIP:</strong> <br>IBM WebSphere Automation will attempt to stop the WebSphere Application Server, if the credentials areprovided in the `soap.client.props` file. <p> However, in this lab environment, the WebSphere credentials are not stored, and you must manually stop the WebSphere Application Server in order for IBM WebSphere Automation to apply the iFix that was downloaded.   
+
+3. Verify the WebSphere Application Server is stopped, using the command below: 
+
+        /opt/IBM/WebSphere/AppServer9057/bin/serverStatus.sh tWAS_9057_server -username wasadmin -password wasadmin
+
+    ![](./lab1-media/media/image89-2.png) 
+   
+
+4. Install the fix to resolve the CVE.
 
     After the fix is successfully fetched, the action to **Install the fix** is made available next to the affected server.
 
@@ -720,7 +679,20 @@ After you select the fix, WebSphere Automation provides two options:
     > ![](./lab1-media/media/image97.png)
 
 
+5. Restart the WebSphere Application Server: 
 
+    a. Return to a Terminal window in the VM
+
+    b. Run the `startServer.sh` command below 
+    
+        /opt/IBM/WebSphere/AppServer9057/bin/startServer.sh tWAS_9057_server
+
+    ![](./lab1-media/media/image89-3.png)    
+
+
+    |        |           |  
+    | ------------- |:-------------|
+    | ![](./lab1-media/media/image4.png?cropResize=50,50)   | <strong>TIP:</strong> <br>IBM WebSphere Automation will START WebSphere Application Servers after it installs a fix, if and only if, IBM WebSphere Automation Stopped the server. <p> However, in this lab, you manually stopped WebSphere Application Server, so WebSphere Automation did NOT restart it.    
 
     <br/>
 
@@ -816,99 +788,25 @@ Since you applied the PH42762 iFix, now you can examine the updated security pos
 
     You learned how to use the automated fix deployment capabilities to easily fix vulnerable servers directly from the IBM WebSphere Automation UI. 
     
-    You learned that WebSphere Automation provides a detailed history of fixes applied to each registered server, including information about when each issue was detected, when and how it was fixed, and how many days servers were exposed.
+    You learned how to demonstrate the date that a vulnerability was detected, and the date that the fix was applied. WebSphere Automation provides a detailed history of fixes applied to each registered server, including information about when each issue was detected, when and how it was fixed, and how many days servers were exposed.
 
     <br/>
 
-
-### 4.3.4 Optional - Uninstall the latest fix that was applied    
-
-With WebSphere Automation, you can uninstall the most recently applied fix for WebSphere and Liberty servers using the UI. 
-
-The server installation with the fix that you want to remove must have a fix management record with a successfully installed fix package (that is, an "**Install**" action with a "**Succeeded**" status).
-
-1. View the **Fix record** for the 9057 server
-
-    a. Return to the **Security** view, and click on the **9057 server** 
-
-    ![](./lab1-media/media/v51-006.png)
-
-    b. Click the **Fix Management** tab, and note the fix record for the installed package "IFPH43148". This is the fix package you installed to resolve the CVE-2021-44228 CVE. 
- 
-    c. Note the fix record status: 
-    - Action: **Install**
-    - Status: **Succeeded**
-
-    ![](./lab1-media/media/v51-007.png)
-
-    Since the "Install" fix record for the IFPH3148 package is in the "Succeeded" state, you can use the WebSphere Automation UI to **Uninstall** the fix. 
-
-2. Uninstall this latest installed fix for the 9057 server
-
-    a. From the **Fix Management** view for the 9057 server, click on the "**Uninstall latest package**" link. 
-
-    ![](./lab1-media/media/v51-009.png)
-   
-    b. Review the details. Then click "**Uninstall**" to uninstall the fix package.
-
-    ![](./lab1-media/media/v51-010.png)
-
-    c. When asked if you want to create a backup, select "**OFF**". Then click the **Proceed** button to begin the Uninstallation of the package. 
-
-    ![](./lab1-media/media/v51-011.png)
-
-    d. A new "Fix Management" record is created, and the "Uninstall" action is started. 
-    
-    ![](./lab1-media/media/v51-012.png)
-
-
-    e. After a few moments, the status of the "Uninstall" fix record  changes to **Succeeded**. 
-    
-    > The fix package has successfully been uninstalled from the 9057 WebSphere server. 
-
-    ![](./lab1-media/media/v51-013.png)
-
-
- 3. View the CVE-2021-44228 CVE in the Servers view, and note that the 9057 server is once again vulnerable to this CVE. 
-
-    a. Click on the **CVEs** tab
-
-    ![](./lab1-media/media/v51-014.png)
-
-    b. Select the CVE-2021-44228 CVE
-
-    ![](./lab1-media/media/v51-015.png)
-
-    c. Scroll down to the **Affected Servers** section in the view. 
-
-    Note that the 9057 WebSphere server is once again vulnerable to the CVE, as the fix package for the CVE as been removed from the server. 
-
-    ![](./lab1-media/media/v51-016.png)
-
-
-4. Return to the Application Runtimes **Security** view in WebSphere Automation     
-
-    ![](./lab1-media/media/v51-017.png)
-
-
-<br/>
-
 **Congratulations!**  You completed the proactive CVE management lab for traditional WebSphere Application Servers.      
-
-
 
 </details>
 
 </br>
 
 
+### Section 5 - Detect and trigger investigation of Application Memory Leak with IBM WebSphere Automation
+
 <details>
- <summary><b><font color="dodgerblue">Click to expand:</font></b> Section 5 - Memory leak investigation with IBM WebSphere Automation and Instana</summary>
+ <summary><b><font color="dodgerblue">Click to expand:</font></b> Section 5 - Detect and trigger investigation of Application Memory Leak with IBM WebSphere Automation</summary>
 
+## 5.0 Detect and Address Application Memory Leak with IBM WebSphere Automation and Instana
 
-## Section 5 - Detect and trigger investigation of Application Memory Leak with IBM WebSphere Automation
-
-In this section of the lab, you are going to use a traditional WebSphere Application
+In this lab, you are going to use a traditional WebSphere Application
 Server registered with IBM WebSphere Automation (WSA), and monitored by Instana to drive a memory leak investigation.
 
 You will learn how WSA can automatically:
@@ -950,20 +848,45 @@ In this lab, the root cause is a vector, growing unbounded, in the sample applic
 WSA also allows you to download all the files that you need to share with your application development team or application vendor, so that they could take the action to remediate the memory leak in the application.
 
 
- ### 5.1 Verify the Instana agent is running and configured
+ ### 5.1 Installing and starting Instana agent
 
-For this lab, the Instana agent has already been installed on the VM. 
+<font color=red> KLP bake this into the image and just add this to appendix. </font>
 
-However, installing the Instana agent is simple. Using the Instana UI, you can select options for installing the agent, such as the `agent mode`, `agent runtime`, and `installation mode`. Doing so, produces a `curl command` that you run from a Terminal window, to install the Linux agent. 
+In this section, you wil install an Instana agent in the `student` VM, where the WebSphere Application Server used in this lab is installed.  
 
-1. Check that the Instana agent process is running. You should see the Instana Java process listed. 
+Using the Instana UI, you can select options for installing the agent, such as the `agent mode`, `agent runtime`, and `installation mode`. Doing so, produces a curl command that you run from a Terminal window, to install the Linux agent. 
 
-        ps -ef | grep instana
+In this lab, we have provided a simple Linux shell script that installs the Linux agent and configures a `WebSphere` infrastructure zone for monitoring WebSphere Application Server. 
 
-    ![](./lab2-media/media/4310-instana-process-pid.png)
+1.  Install the Instana Linux agent on the Student VM
 
-     
-    **Tip:** The Instana agent is installed in **/opt/instana/agent** directory.
+    a.  Open a Terminal window.
+    
+    b. Change to the directory where the script is located
+
+         cd /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak
+
+    c. Run the following script to install the instana agent
+
+        ./klp-install-instana-agent.sh
+        
+    ![](./lab2-media/media/4310-install-instana-agant.png)
+ 
+     ![](./lab2-media/media/4310-restarted-instana.png)
+      
+    The Instana agent is installed in **/opt/instana/agent** directory.
+
+    The script also defined an Instana Infrastructure Zone for WebSphere by enabling the Instana `Hardware & Zone plugin settings` as illustrated below:  
+    
+    ![Graphical user interface, text Description automatically
+ generated](./lab2-media/media/image24.png)
+
+    > For reference purposes only, Instana's configuration file is located here: `/opt/instana/agent/etc/instana/configuration.yaml`
+
+
+    Lastly, the script restarted the Instana agent with the updated configuration.
+
+      ![](./lab2-media/media/4310-restarted-instana.png)
 
 
 2. Login to the Instana UI
@@ -982,22 +905,22 @@ However, installing the Instana agent is simple. Using the Instana UI, you can s
 
 3.  Verify the Instana agent installation
 
+    > Note: after the agent is started, it might take a few minutes for the agent to sync with Instana server.
+
     a. Click on the `Infrastructure` icon on the left navigation bar. 
     
-    You will see the `WebSphere` infrastructure zone that we configured in the Instana agent for this lab. 
-    
-    This infrastructure zone is configured for montoring WebSphere, using Instana's out of the box capabilities. 
+    You will see the `WebSphere` infrastructure zone that was configured when you installed the Instana agent using the Linux script.  
 
     ![](./lab2-media/media/4310-infrastructure-zone.png)
 
-    b. Click `Time Rage` dropdown button, select `Last 5 minutes` and click `Live`.
+       b. Click `Time Rage` dropdown button, select `Last 5 minutes` and click `Live`.
 
     ![A screenshot of a computer Description automatically generated with medium confidence](./lab2-media/media/image28.png)
 
     The Istana agent is now set to monitor the changes in 5 minutes interval, the agent installation is now completed.
 
 
-### 5.2 WebSphere Automation integration with Instana and WebSphere Servers
+### 5.2 Configure WebSphere Automation integration with Instana and WebSphere Servers
 
 WebSphere Automation (WSA) communicates with Instana to receive real-time Instana alerts. 
 
@@ -1007,9 +930,30 @@ To do so, a secure ssh connection must be configured between the Instana server 
 
 -----------------------------------------------------------
 
-For this lab, we have configured the secure ssh connections required for Instana, WebSphere Automation, and WebSphere Application Server environments, according to the product documentation. 
+In this lab, you will run a simple Linux shell script that configures and validates the secure SSH connection,
 
 ----------------------------------------------------------
+
+1. Configure the secure ssh connection between Instana server and the Linux Student VM
+
+    a. Return to the Terminal window in the Student VM.
+
+    b. Ensure you are in the directory where the script is located
+
+        cd /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak
+
+    c. Run the following script that configures the secure ssh connection and restarts the Instana server.
+
+        ./klp-instana-setup.sh 
+
+
+    c. Ensure the script completed with the `TEST PASSED` message. 
+
+    When the script completes the ssh configuration, it tests the secure connection. If the connection is properly configured, the `TEST PASSED` message is displayed. 
+
+    If the test passes, you can continue with the lab.
+
+    ![](./lab2-media/media/4310-setup-instana-ssh.png)
 
 
 ### 5.3 Configure Instana for memory leak alert
@@ -1062,7 +1006,6 @@ generated](./lab2-media/media/4310-alert-channel-created.png)
     a. On the Team Settings page, under **`Events & Alerts`**,
     click **`Events`**.
 
-    b. In the `search field`, enter `memory usgae high` to filter the list of events.
 
     b. You see the custom event named `Memory Usage High` that was configured for the lab.  
 
@@ -1105,7 +1048,7 @@ When WebSphere Automation detects the memory leak, it automatically conducts the
   
     a.  On the *Student VM*, open a browser and enter the following URL (there is a WebSphere Automation link on bookmark toolbar):
     
-    <a href="https://cpd-websphere-automation.apps.ocp.ibm.edu/zen/#/homepage"><span class="underline">https://cpd-websphere-automation.apps.ocp.ibm.edu/zen/#/homepage</span></a>
+  	 <a href="https://cp-console.apps.ocp.ibm.edu/oidc/login.jsp#/homepage"><span class="underline">https://cp-console.apps.ocp.ibm.edu/oidc/login.jsp#/homepage</span></a>
 
 
     ![opening browser](./lab1-media/media/image10.png)
@@ -1260,32 +1203,27 @@ When WebSphere Automation detects the memory leak, it automatically conducts the
 12. you can run a script to reduce the heap usage and then stop the WAS
     server with the commands:
 
-    a. Free the memory 
+        /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-curl_MLAPP_removeLast.sh
 
-        /home/ibmuser/WAS-Automation-LabFiles/techxchange/lab2-MemoryLeak/klp-curl_MLApp_removeLast.sh
-
-    b. Stop the WebSPhere Application Server
-        
         /opt/IBM/WebSphere/AppServer9057/bin/stopServer.sh tWAS_9057_server -username wasadmin -password wasadmin
 
     <br/>
 
     **Congratulations!** You have completed the WebSphere Automation Memory Leak Detection lab.
 
-    <br/>
-
-    
 </details>
 
 
-<details>
- <summary><b><font color="dodgerblue">Click to expand:</font></b> Appendix A: (READ_ONLY - For reference) Detailed steps to configure Instana for memory leak alert
- </summary>
-
 <br/>
 
-### Appendix A: (READ ONLY - For reference) Detailed steps to configure Instana for memory leak alert
 
+### Appendix A: Detailed steps to configure Instana for memory leak alert
+
+
+<details>
+ <summary><b><font color="dodgerblue">Click to expand:</font></b> Appendix A: Detailed steps to configure Instana for memory leak alert</summary>
+
+<br/>
 
 This section describes the steps to configure Instana for the memory
 leak alert to be used by WebSphere Automation (WSA). 
