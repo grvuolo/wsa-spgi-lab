@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+    <springBootApplication id="spring-liberty" location="thin-spring-liberty-0.0.1-SNAPSHOT.war" name="spring-liberty"/>
+</server>
