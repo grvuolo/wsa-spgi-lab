@@ -16,7 +16,6 @@ ARG APPNAME=spring-liberty-0.0.1-SNAPSHOT.war
 ARG VERSION=1.0
 ARG REVISION=SNAPSHOT
 COPY --chown=1001:0 src/main/liberty/config/server.xml /config/server.xml
-COPY --chown=1001:0 key.p12 /opt/ibm/wlp/usr/servers/defaultServer/resources/security/
 
 # Default setting for the verbose option
 ARG VERBOSE=false
