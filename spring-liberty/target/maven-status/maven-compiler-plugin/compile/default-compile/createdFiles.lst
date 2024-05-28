@@ -1,3 +1,2 @@
-demo/SpringLibertyApplication.class
-demo/ServletInitializer.class
-demo/HelloController.class
+com/example/springboot/HelloController.class
+com/example/springboot/Application.class
