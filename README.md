@@ -4,7 +4,7 @@
 
 ![banner](./lab1-media/media/image1.jpeg)
 
-Last updated: January 2024
+Last updated: May 2024
 
 IBM WebSphere Automation version 1.6.2
 
@@ -18,6 +18,8 @@ Need support?
 - Kevin Postreich - kevinlp@us.ibm.com
 
 - Yi Tang - yitang@us.ibm.com
+
+- Giovanni Vuolo - giovanni.rafael.vuolo@ibm.com
  
 ## Introduction to IBM WebSphere Automation
 
@@ -154,6 +156,7 @@ Otherwise, you will need to reserve an environment for the lab. You can obtain o
     b. From the Terminal window, run the following command to clone the repo:
 
         git clone https://github.com/IBMTechSales/WAS-Automation-LabFiles.git
+        git clone https://github.com/grvuolo/wsa-spgi-lab.git
 
     ![](./lab1-media/media/clonerepo.png)
 
@@ -352,7 +355,30 @@ https://www.ibm.com/docs/en/ws-automation?topic=notifications-example-notificati
 
 <br/>
 
-## Section 3 - Register WebSphere Application Server with IBM WebSphere Automation
+
+## Section 3 - Register WebSphere Liberty on Container running on OpenShift with IBM WebSphere Automation
+
+In this section you will manually registry a Spring Boot application running on WebSphere Liberty  on OpenShift. Eventually this process can be automated.
+
+You will be following this guide: https://www.ibm.com/docs/en/ws-automation?topic=servers-registering-updating-liberty-in-containers
+
+
+1. Ensure you are in directory where the shell scripts are located. 
+
+        cd /home/ibmuser/wsa-spgi-lab
+        
+
+2. Go to OpenShift Console and install WebSphere Liberty Operator
+	and check that is installed
+
+
+3. Follow this https://www.ibm.com/docs/en/ws-automation?topic=servers-registering-updating-liberty-in-containers
+(Poner fotos y pasos)
+
+4. Check on WSA console that it appears and that the app is running at http://springboot-spring-liberty.apps.ocp.ibm.edu/hello
+
+
+## Section 4 - Register WebSphere Application Server with IBM WebSphere Automation
 
 
 In this section, you run a Linux shell script to automatically register a WebSphere Application Server to IBM WebSphere Automation. 
@@ -418,9 +444,9 @@ In this section, you run the `register-was-server.sh` script to register a WebSp
 
 Now that WebSphere Automation is configured and you have registered a WebSphere application server, you may choose your learning journey by selecting one or both sections below: 
 
-  - `Section 4:` (60 minutes) - Get hands-on experience with the "Proactive CVE protection for WebSphere" use case.
+  - `Section 5:` (60 minutes) - Get hands-on experience with the "Proactive CVE protection for WebSphere" use case.
 
-  - `Section 5:` (45 minutes) - Get hands-on experience with the "Memory leak investigation using IBM Automation and Instana" use case. 
+  - `Section 6:` (45 minutes) - Get hands-on experience with the "Memory leak investigation using IBM Automation and Instana" use case. 
   
 
 ================================================================
@@ -432,10 +458,10 @@ Now that WebSphere Automation is configured and you have registered a WebSphere 
     <summary><b><font color="dodgerblue">Click to expand:</font></b> Section 4 - Proactive CVE protection for WebSphere with IBM WebSphere Automation</summary>
 
 
-## Section 4 - Proactive CVE protection for WebSphere with IBM WebSphere Automation
+## Section 5 - Proactive CVE protection for WebSphere with IBM WebSphere Automation
 
 
-### 4.1 Business Context for this scenario
+### 5.1 Business Context for this scenario
 
 You are a WebSphere Administrator, part of a WebSphere Operations Team that is responsible for maintaining security compliance of the WebSphere estate in the enterprise. 
 
@@ -467,7 +493,7 @@ In this section, you use the IBM WebSphere Automation to demonstrate its powerfu
 
 
 
-### 4.2 How IBM WebSphere Automation automatically manages your WebSphere and Liberty server security posture 
+### 5.2 How IBM WebSphere Automation automatically manages your WebSphere and Liberty server security posture 
 
 WebSphere administrators register their WebSphere Application Server or Liberty servers with WebSphere Automation. 
 
@@ -481,7 +507,7 @@ After defining an exposure mitigation plan, administrators can then use the WebS
 
 <br>
 
-### 4.3 Working with Traditional WebSphere servers with IBM Automation – Security Vulnerabilities
+### 5.3 Working with Traditional WebSphere servers with IBM Automation – Security Vulnerabilities
 
 You can view the security vulnerability status of each server in your inventory from the **Security** page in the WebSphere Automation UI. 
 For each server, the numerical risk level in the range 0 - 10 represents the highest CVSS value of its CVEs.
@@ -513,7 +539,7 @@ In this section of the lab, you do the following tasks:
     
     <br>
  
-### 4.3.1 Review CVE-2021-44228 to understand the remediation options for the LOG4J vulnerability
+### 5.3.1 Review CVE-2021-44228 to understand the remediation options for the LOG4J vulnerability
 
 In this section, you review the details of the critical (10.0) **CVE-2021-44228** CVE and determine the appropriate remediation options to resolve the CVE.
 
@@ -581,7 +607,7 @@ You apply the iFix that is documented in the IBM security bulletin to resolve th
 
 
 
-### 4.3.2 Update tWAS server v9.0.5.7 to fix the LOG4J vulnerability
+### 5.3.2 Update tWAS server v9.0.5.7 to fix the LOG4J vulnerability
 
 You can automatically deploy fixes to servers in your managed server inventory through the WebSphere Automation UI. You must have a user profile with at least the **Modify WebSphere inventory** permission, and the servers that you want to fix must be registered and configured for fix installation with WebSphere Automation.
 
@@ -597,7 +623,7 @@ There are a couple of additional components in the product to support this use c
   
     The WebSphere Automation *installation manager* communicates with the registered server by using the administrator privileges that you provide. When you initiate the installation of a fix, the installation manager ensures that the target server has sufficient space for the fix, transfers the fix to the target server, installs the fix, and creates a log file of the steps taken. If you request a backup of the server environment as part of the fix installation, the installation manager checks for sufficient disk space on the server, and creates an archive of the Installation Manager, Installation Manager data, and WebSphere Application Server or WebSphere Application Server Liberty server installation directories.
 
-### 4.3.2.1 Navigate to the Server and unresolved CVE to fix
+### 5.3.2.1 Navigate to the Server and unresolved CVE to fix
 
 Apply the recommended iFix to resolve the CVE-2021-44228 vulnerability.
 
@@ -635,7 +661,7 @@ Apply the recommended iFix to resolve the CVE-2021-44228 vulnerability.
     ![](./lab1-media/media/image85.png)
     
 
-### 4.3.2.2 Prepare Fix 
+### 5.3.2.2 Prepare Fix 
 
 The *Fix Deployment* capability of WebSphere Automation delivers automation that determines which APARs and interim fixes resolve a specific vulnerability, and enables one-click download and deploy of fixes. 
 
@@ -731,7 +757,7 @@ In the next section of the lab, you review the updated security posture and fix 
 <br>
 
 
-### 4.3.3 View the security posture and Fix History of your WebSphere servers
+### 5.3.3 View the security posture and Fix History of your WebSphere servers
 
 ### Fix history
 
@@ -821,7 +847,7 @@ Since you applied the PH42762 iFix, now you can examine the updated security pos
     <br/>
 
 
-### 4.3.4 Optional - Uninstall the latest fix that was applied    
+### 5.3.4 Optional - Uninstall the latest fix that was applied    
 
 With WebSphere Automation, you can uninstall the most recently applied fix for WebSphere and Liberty servers using the UI. 
 
@@ -893,7 +919,31 @@ The server installation with the fix that you want to remove must have a fix man
 
 <br/>
 
-**Congratulations!**  You completed the proactive CVE management lab for traditional WebSphere Application Servers.      
+### 5.3 Working with WebSphere Liberty running in containers with IBM Automation – Security Vulnerabilities (optional)
+
+
+
+All previous steps for reviewing the CVE fot a Traditiona WAS are valid also for Liberty on containers. The difference comes when we need to apply the fix, as containers behave differently than a Virtual Machine.
+
+In a production scenario, we would have configure a pipeline (for example with Tekton) that triggers whenever we want to apply the fix.
+
+In this lab you can explore how a Lberty can be manually updated due to a CVE detected by WebSphere Automation.
+
+
+1. Review the CVE and check which version of Liberty is necessary to be compliant
+
+2. Follow this guide: https://www.ibm.com/docs/en/ws-automation?topic=servers-registering-updating-liberty-in-containers#cf-t-add-liberty-container__updating__title__1
+(poner fotos y pasos)
+
+3. Check the new version of Liberty does not have the same CVEs
+
+4. Unregister previous (due to the unique name of the pods it is registered as a new server, we could avoid within the pipeline flow)
+
+
+
+
+
+**Congratulations!**  You completed the proactive CVE management lab.      
 
 
 
@@ -906,7 +956,7 @@ The server installation with the fix that you want to remove must have a fix man
  <summary><b><font color="dodgerblue">Click to expand:</font></b> Section 5 - Memory leak investigation with IBM WebSphere Automation and Instana</summary>
 
 
-## Section 5 - Detect and trigger investigation of Application Memory Leak with IBM WebSphere Automation
+## Section 6 - Detect and trigger investigation of Application Memory Leak with IBM WebSphere Automation
 
 In this section of the lab, you are going to use a traditional WebSphere Application
 Server registered with IBM WebSphere Automation (WSA), and monitored by Instana to drive a memory leak investigation.
@@ -997,7 +1047,7 @@ However, installing the Instana agent is simple. Using the Instana UI, you can s
     The Istana agent is now set to monitor the changes in 5 minutes interval, the agent installation is now completed.
 
 
-### 5.2 WebSphere Automation integration with Instana and WebSphere Servers
+### 6.2 WebSphere Automation integration with Instana and WebSphere Servers
 
 WebSphere Automation (WSA) communicates with Instana to receive real-time Instana alerts. 
 
@@ -1012,7 +1062,7 @@ For this lab, we have configured the secure ssh connections required for Instana
 ----------------------------------------------------------
 
 
-### 5.3 Configure Instana for memory leak alert
+### 6.3 Configure Instana for memory leak alert
 
 Configuring Instana to create alerts is outside the scope of this lab.
 
@@ -1083,7 +1133,7 @@ generated](./lab2-media/media/4310-alert-channel-created.png)
  automatically generated](./lab2-media/media/4310-alert-created.png)
 
 
-### 5.4 WebSphere memory leak check with WebSphere Automation
+### 6.4 WebSphere memory leak check with WebSphere Automation
 
 In this section, you run a script to create a memory leak incident for an application running in a WebSphere Application server instance which is already registered in WebSphere Automation. 
 
