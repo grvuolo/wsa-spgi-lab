@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<featureInfo name="core" location="/Users/grvuolo/Library/CloudStorage/Box-Box/Lab/wsa-spgi-lab/spring-liberty/target/liberty/wlp"> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.anno-2.0</symbolicName> 
+        <singleton>true</singleton> 
+        <include symbolicName="io.openliberty.jakarta.annotation-2.0" tolerates="2.1,3.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.artifact-1.0"></include> 
+    </privateFeature> 
+    <protectedFeature> 
+        <symbolicName>com.ibm.websphere.appserver.appLifecycle-1.0</symbolicName> 
+        <description>%description</description> 
+    </protectedFeature> 
+    <protectedFeature> 
+        <symbolicName>com.ibm.websphere.appserver.appmanager-1.0</symbolicName> 
+        <description>%description</description> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.application_1.1.89.jar</spiJar> 
+        <apiPackage type="ibm-api">com.ibm.websphere.application</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.filemonitor</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.kernel.server</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.runtime.update</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.security</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.security.auth</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.security.cred</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.wsspi.security.registry</apiPackage> 
+        <spiPackage>com.ibm.wsspi.application.handler</spiPackage> 
+        <include symbolicName="com.ibm.websphere.appserver.appLifecycle-1.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.classloading-1.0"></include> 
+    </protectedFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.artifact-1.0</symbolicName> 
+    </privateFeature> 
+    <kernelFeature> 
+        <symbolicName>com.ibm.websphere.appserver.binary.logging-1.0</symbolicName> 
+        <apiJar>dev/api/ibm/com.ibm.websphere.appserver.api.hpel_2.0.89.jar</apiJar> 
+        <apiPackage type="ibm-api">com.ibm.websphere.logging.hpel.reader</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.logging.hpel.reader.filters</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.logging.hpel.writer</apiPackage> 
+        <spiPackage>com.ibm.websphere.ras</spiPackage> 
+        <spiPackage>com.ibm.websphere.ras.annotation</spiPackage> 
+        <spiPackage>com.ibm.wsspi.logging</spiPackage> 
+        <spiPackage>com.ibm.ws.ffdc</spiPackage> 
+        <include symbolicName="com.ibm.websphere.appserver.logging-1.0"></include> 
+    </kernelFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.channelfw-1.0</symbolicName> 
+    </privateFeature> 
+    <protectedFeature> 
+        <symbolicName>com.ibm.websphere.appserver.classloading-1.0</symbolicName> 
+        <description>%description</description> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.classloading_1.4.89.jar</spiJar> 
+        <apiPackage type="spec" require-java="9">javax.activity</apiPackage> 
+        <spiPackage>com.ibm.wsspi.classloading</spiPackage> 
+        <spiPackage>com.ibm.wsspi.library</spiPackage> 
+        <include symbolicName="com.ibm.websphere.appserver.containerServices-1.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.dynamicBundle-1.0"></include> 
+    </protectedFeature> 
+    <protectedFeature> 
+        <symbolicName>com.ibm.websphere.appserver.containerServices-1.0</symbolicName> 
+        <description>%description</description> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.containerServices_4.0.89.jar</spiJar> 
+        <spiPackage>com.ibm.ws.container.service.annotations</spiPackage> 
+        <spiPackage>com.ibm.ws.container.service.app.deploy</spiPackage> 
+        <spiPackage>com.ibm.ws.container.service.config</spiPackage> 
+        <spiPackage>com.ibm.ws.container.service.naming</spiPackage> 
+        <spiPackage>com.ibm.ws.container.service.security</spiPackage> 
+        <spiPackage>com.ibm.ws.container.service.state</spiPackage> 
+        <spiPackage>com.ibm.ws.serialization</spiPackage> 
+        <spiPackage>com.ibm.wsspi.resource</spiPackage> 
+        <include symbolicName="com.ibm.websphere.appserver.javaeedd-1.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.anno-1.0" tolerates="2.0"></include> 
+    </protectedFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.dynamicBundle-1.0</symbolicName> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.eeCompatible-10.0</symbolicName> 
+        <singleton>true</singleton> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.httptransport-1.0</symbolicName> 
+        <include symbolicName="com.ibm.websphere.appserver.channelfw-1.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.injection-2.0</symbolicName> 
+        <singleton>true</singleton> 
+        <include symbolicName="com.ibm.websphere.appserver.containerServices-1.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.eeCompatible-9.0" tolerates="10.0,11.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.anno-2.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.javaeePlatform-6.0</symbolicName> 
+        <include symbolicName="com.ibm.websphere.appserver.appmanager-1.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.javaeePlatform-7.0</symbolicName> 
+        <include symbolicName="com.ibm.websphere.appserver.javaeePlatform-6.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.javaeePlatform-8.0</symbolicName> 
+        <include symbolicName="com.ibm.websphere.appserver.javaeePlatform-7.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.javaeedd-1.0</symbolicName> 
+        <include symbolicName="com.ibm.websphere.appserver.artifact-1.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.javaeeddSchema-1.0</symbolicName> 
+    </privateFeature> 
+    <kernelFeature> 
+        <symbolicName>com.ibm.websphere.appserver.kernel-1.0</symbolicName> 
+        <apiJar>dev/api/ibm/com.ibm.websphere.appserver.api.config_1.2.89.jar</apiJar> 
+        <apiJar>dev/api/ibm/com.ibm.websphere.appserver.api.kernel.service_1.1.89.jar</apiJar> 
+        <apiJar>dev/api/spec/com.ibm.websphere.javaee.jsonp.1.0_1.0.89.jar</apiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.kernel.embeddable_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.kernel.filemonitor_1.0.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.kernel.metatype_1.0.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.kernel.service_1.8.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.threading_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.core_1.2.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.namespace.service_1.0.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.cm_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.component.annotations_1.0.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.component_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.coordinator_1.0.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.event_1.0.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.log_1.2.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.metatype.annotations_1.0.89.jar</spiJar> 
+        <spiJar>dev/spi/spec/com.ibm.wsspi.org.osgi.service.metatype_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/third-party/com.ibm.wsspi.thirdparty.equinox_1.3.89.jar</spiJar> 
+    </kernelFeature> 
+    <kernelFeature> 
+        <symbolicName>com.ibm.websphere.appserver.kernelCore-1.0</symbolicName> 
+        <displayName>Liberty Kernel</displayName> 
+        <description>This feature provides the Liberty kernel, which makes up the core of the Open Liberty runtime.</description> 
+        <apiPackage type="ibm-api">com.ibm.websphere.config.mbeans</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.logging</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.logging.hpel</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.kernel.server</apiPackage> 
+        <spiPackage>com.ibm.websphere.crypto</spiPackage> 
+        <spiPackage>com.ibm.wsspi.config</spiPackage> 
+        <spiPackage>com.ibm.wsspi.kernel.filemonitor</spiPackage> 
+        <spiPackage>com.ibm.wsspi.kernel.service.location</spiPackage> 
+        <spiPackage>com.ibm.wsspi.kernel.service.utils</spiPackage> 
+        <spiPackage>com.ibm.wsspi.security.crypto</spiPackage> 
+        <spiPackage>com.ibm.wsspi.threading</spiPackage> 
+        <spiPackage type="spec">org.osgi.service.cm</spiPackage> 
+        <spiPackage type="spec">org.osgi.service.component</spiPackage> 
+        <spiPackage type="spec">org.osgi.service.coordinator</spiPackage> 
+        <spiPackage type="spec">org.osgi.service.event</spiPackage> 
+        <spiPackage type="spec">org.osgi.service.log</spiPackage> 
+        <spiPackage type="spec">org.osgi.service.metatype</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.framework.console</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.framework.eventmgr</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.framework.log</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.datalocation</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.debug</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.environment</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.localization</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.resolver</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.runnable</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.security</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.service.urlconversion</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.signedcontent</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.storagemanager</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.osgi.util</spiPackage> 
+        <spiPackage type="third-party">org.eclipse.equinox.log</spiPackage> 
+        <configElement>include</configElement> 
+        <configElement>featureManager</configElement> 
+        <configElement>executor</configElement> 
+        <configElement>variable</configElement> 
+        <configElement>fileset</configElement> 
+        <configElement>config</configElement> 
+    </kernelFeature> 
+    <kernelFeature> 
+        <symbolicName>com.ibm.websphere.appserver.logging-1.0</symbolicName> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.logging_1.1.89.jar</spiJar> 
+        <spiPackage>com.ibm.websphere.ras</spiPackage> 
+        <spiPackage>com.ibm.websphere.ras.annotation</spiPackage> 
+        <spiPackage>com.ibm.wsspi.logging</spiPackage> 
+        <spiPackage>com.ibm.ws.ffdc</spiPackage> 
+        <spiPackage>com.ibm.ws.ffdc.annotation</spiPackage> 
+        <configElement>logging</configElement> 
+    </kernelFeature> 
+    <privateFeature> 
+        <symbolicName>com.ibm.websphere.appserver.requestProbes-1.0</symbolicName> 
+    </privateFeature> 
+    <feature name="servlet-6.0"> 
+        <symbolicName>com.ibm.websphere.appserver.servlet-6.0</symbolicName> 
+        <singleton>true</singleton> 
+        <displayName>Jakarta Servlet 6.0</displayName> 
+        <description>This feature enables support for HTTP Servlets written to the Jakarta Servlet 6.0 specification. You can package servlets in Jakarta EE specified WAR or EAR files.  If servlet security is required, you should also configure an appSecurity feature. Without a security feature, any security constraints for the application are ignored.</description> 
+        <category>JakartaEE10Application</category> 
+        <apiJar>dev/api/ibm/com.ibm.websphere.appserver.api.basics_1.4.89.jar</apiJar> 
+        <apiJar>dev/api/ibm/com.ibm.websphere.appserver.api.endpoint_1.0.89.jar</apiJar> 
+        <apiJar>dev/api/ibm/io.openliberty.servlet_1.1.89.jar</apiJar> 
+        <apiJar require-java="9.0.0">dev/api/spec/com.ibm.websphere.javaee.activity.1.0_1.0.89.jar</apiJar> 
+        <apiJar>dev/api/spec/io.openliberty.jakarta.annotation.2.1_1.0.89.jar</apiJar> 
+        <apiJar>dev/api/spec/io.openliberty.jakarta.servlet.6.0_1.0.89.jar</apiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.anno_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.application_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.artifact_1.2.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.classloading_1.4.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.containerServices_4.0.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.httptransport_4.2.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.javaeedd_1.8.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/io.openliberty.servlet.spi_2.14.89.jar</spiJar> 
+        <apiPackage type="spec">jakarta.servlet.annotation</apiPackage> 
+        <apiPackage type="spec">jakarta.servlet.descriptor</apiPackage> 
+        <apiPackage type="spec">jakarta.servlet.resources</apiPackage> 
+        <apiPackage type="spec">jakarta.servlet.http</apiPackage> 
+        <apiPackage type="spec">jakarta.servlet</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.servlet.session</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.wsspi.servlet.session</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.servlet.error</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.servlet.container</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.servlet.context</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.servlet.event</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.webcontainer</apiPackage> 
+        <apiPackage type="ibm-api">com.ibm.websphere.endpoint</apiPackage> 
+        <apiPackage type="spec">jakarta.annotation</apiPackage> 
+        <apiPackage type="spec">jakarta.annotation.security</apiPackage> 
+        <apiPackage type="spec">jakarta.annotation.sql</apiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer</spiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer.collaborator</spiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer.extension</spiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer.filter</spiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer.metadata</spiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer.osgi.extension</spiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer.servlet</spiPackage> 
+        <spiPackage>com.ibm.wsspi.webcontainer.webapp</spiPackage> 
+        <spiPackage>com.ibm.websphere.servlet.filter</spiPackage> 
+        <spiPackage>com.ibm.websphere.servlet.response</spiPackage> 
+        <spiPackage>com.ibm.ws.webcontainer.extension</spiPackage> 
+        <spiPackage>com.ibm.websphere.servlet.request</spiPackage> 
+        <spiPackage>com.ibm.ws.webcontainer.spiadapter.collaborator</spiPackage> 
+        <spiPackage>com.ibm.websphere.webcontainer.async</spiPackage> 
+        <spiPackage>com.ibm.wsspi.adaptable.module</spiPackage> 
+        <spiPackage>com.ibm.ws.adaptable.module.structure</spiPackage> 
+        <spiPackage>com.ibm.wsspi.adaptable.module.adapters</spiPackage> 
+        <spiPackage>com.ibm.wsspi.artifact</spiPackage> 
+        <spiPackage>com.ibm.wsspi.artifact.factory</spiPackage> 
+        <spiPackage>com.ibm.wsspi.artifact.factory.contributor</spiPackage> 
+        <spiPackage>com.ibm.wsspi.artifact.overlay</spiPackage> 
+        <spiPackage>com.ibm.wsspi.artifact.equinox.module</spiPackage> 
+        <spiPackage>com.ibm.wsspi.http</spiPackage> 
+        <spiPackage>com.ibm.wsspi.http.ee8</spiPackage> 
+        <spiPackage>com.ibm.wsspi.anno.classsource</spiPackage> 
+        <spiPackage>com.ibm.wsspi.anno.info</spiPackage> 
+        <spiPackage>com.ibm.wsspi.anno.service</spiPackage> 
+        <spiPackage>com.ibm.wsspi.anno.targets</spiPackage> 
+        <spiPackage>com.ibm.wsspi.anno.util</spiPackage> 
+        <spiPackage>com.ibm.ws.anno.classsource.specification</spiPackage> 
+        <configElement>httpOptions</configElement> 
+        <configElement>cors</configElement> 
+        <configElement>webApplication</configElement> 
+        <configElement>samesite</configElement> 
+        <configElement>pluginConfiguration</configElement> 
+        <configElement>httpAccessLogging</configElement> 
+        <configElement>classloader</configElement> 
+        <configElement>virtualHost</configElement> 
+        <configElement>httpSession</configElement> 
+        <configElement>mimeTypes</configElement> 
+        <configElement>webContainer</configElement> 
+        <configElement>library</configElement> 
+        <configElement>httpEndpoint</configElement> 
+        <configElement>httpDispatcher</configElement> 
+        <configElement>applicationManager</configElement> 
+        <configElement>headers</configElement> 
+        <configElement>httpProxyRedirect</configElement> 
+        <configElement>remoteIp</configElement> 
+        <configElement>httpEncoding</configElement> 
+        <configElement>enterpriseApplication</configElement> 
+        <configElement>applicationMonitor</configElement> 
+        <configElement>javaPermission</configElement> 
+        <configElement>application</configElement> 
+        <configElement>channelfw</configElement> 
+        <configElement>classloading</configElement> 
+        <configElement>compression</configElement> 
+        <configElement>tcpOptions</configElement> 
+        <include symbolicName="com.ibm.websphere.appserver.eeCompatible-10.0"></include> 
+        <include symbolicName="io.openliberty.servlet.internal-6.0"></include> 
+        <include symbolicName="io.openliberty.servlet-servletSpi2.0"></include> 
+    </feature> 
+    <privateFeature> 
+        <symbolicName>io.openliberty.jakarta.annotation-2.1</symbolicName> 
+        <singleton>true</singleton> 
+        <include symbolicName="com.ibm.websphere.appserver.eeCompatible-10.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>io.openliberty.jakartaeePlatform-10.0</symbolicName> 
+        <include symbolicName="io.openliberty.jakartaeePlatform-9.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>io.openliberty.jakartaeePlatform-9.0</symbolicName> 
+        <include symbolicName="com.ibm.websphere.appserver.javaeePlatform-8.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>io.openliberty.servlet-servletSpi2.0</symbolicName> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>io.openliberty.servlet.api-6.0</symbolicName> 
+        <singleton>true</singleton> 
+        <include symbolicName="com.ibm.websphere.appserver.eeCompatible-10.0"></include> 
+    </privateFeature> 
+    <privateFeature> 
+        <symbolicName>io.openliberty.servlet.internal-6.0</symbolicName> 
+        <singleton>true</singleton> 
+        <include symbolicName="io.openliberty.jakartaeePlatform-10.0"></include> 
+        <include symbolicName="io.openliberty.servlet.api-6.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.javaeeddSchema-1.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.injection-2.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.httptransport-1.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.requestProbes-1.0"></include> 
+        <include symbolicName="io.openliberty.jakarta.annotation-2.1"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.eeCompatible-10.0"></include> 
+    </privateFeature> 
+    <feature name="springBoot-3.0"> 
+        <symbolicName>io.openliberty.springBoot-3.0</symbolicName> 
+        <singleton>true</singleton> 
+        <displayName>Spring Boot Support 3.0</displayName> 
+        <description>This feature enables support for Spring Boot applications that use Spring Boot version 3.x.x. </description> 
+        <apiJar>dev/api/ibm/com.ibm.websphere.appserver.api.basics_1.4.89.jar</apiJar> 
+        <apiJar require-java="9.0.0">dev/api/spec/com.ibm.websphere.javaee.activity.1.0_1.0.89.jar</apiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.application_1.1.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.artifact_1.2.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.classloading_1.4.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.containerServices_4.0.89.jar</spiJar> 
+        <spiJar>dev/spi/ibm/com.ibm.websphere.appserver.spi.javaeedd_1.8.89.jar</spiJar> 
+        <configElement>applicationManager</configElement> 
+        <configElement>library</configElement> 
+        <configElement>application</configElement> 
+        <configElement>classloader</configElement> 
+        <configElement>applicationMonitor</configElement> 
+        <configElement>classloading</configElement> 
+        <configElement>javaPermission</configElement> 
+        <configElement>springBootApplication</configElement> 
+        <include symbolicName="io.openliberty.springBootHandler-3.0"></include> 
+        <include symbolicName="com.ibm.websphere.appserver.eeCompatible-10.0" tolerates="11.0"></include> 
+    </feature> 
+    <privateFeature> 
+        <symbolicName>io.openliberty.springBootHandler-3.0</symbolicName> 
+        <singleton>true</singleton> 
+        <include symbolicName="io.openliberty.jakartaeePlatform-10.0"></include> 
+    </privateFeature> 
+    <autoFeature> 
+        <symbolicName>io.openliberty.springBootServerSupport.servlet60-1.0</symbolicName> 
+        <description>%description</description> 
+        <autoProvision>(&amp;(type=osgi.subsystem.feature)(osgi.identity=io.openliberty.springBoot-3.0))</autoProvision> 
+        <autoProvision>(&amp;(type=osgi.subsystem.feature)(|(osgi.identity=com.ibm.websphere.appserver.servlet-6.0)(osgi.identity=com.ibm.websphere.appserver.servlet-6.1)))</autoProvision> 
+    </autoFeature> 
+<defaultConfiguration> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.logging-1.0"> 
+        <logging> 
+        </logging> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.channelfw-1.0"> 
+        <variable defaultValue="localhost" name="defaultHostName"> 
+        </variable> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.channelfw-1.0"> 
+        <tcpOptions id="defaultTCPOptions" service.ranking="-1"> 
+        </tcpOptions> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.channelfw-1.0"> 
+        <udpOptions id="defaultUDPOptions" service.ranking="-1"> 
+        </udpOptions> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.classloading-1.0"> 
+        <library apiTypeVisibility="spec, ibm-api, api, stable" id="global"> 
+            <fileset includes="*" dir="${shared.config.dir}/lib/global/"> 
+            </fileset> 
+            <fileset includes="*" dir="${server.config.dir}/lib/global/"> 
+            </fileset> 
+            <folder dir="${server.config.dir}/lib/global/"> 
+            </folder> 
+            <folder dir="${shared.config.dir}/lib/global/"> 
+            </folder>
+     
+        </library> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.kernelCore-1.0"> 
+        <org.apache.felix.scr.ScrService ds.info.service="true" ds.cache.metadata="true"> 
+        </org.apache.felix.scr.ScrService> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.binary.logging-1.0"> 
+        <logging> 
+            <binaryLog> 
+            </binaryLog> 
+            <binaryTrace> 
+            </binaryTrace>
+		 
+        </logging> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.appmanager-1.0"> 
+        <com.ibm.ws.app.prereqs id="com.ibm.ws.app.prereqs"> 
+        </com.ibm.ws.app.prereqs> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <httpOptions id="defaultHttpOptions" service.ranking="-1"> 
+        </httpOptions> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <remoteIp id="defaultRemoteIp" service.ranking="-1"> 
+        </remoteIp> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <compression id="defaultCompression" service.ranking="-1"> 
+        </compression> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <samesite id="defaultSameSite" service.ranking="-1"> 
+        </samesite> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <headers id="defaultHeaders" service.ranking="-1"> 
+        </headers> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <httpEndpoint httpPort="9080" id="defaultHttpEndpoint" httpsPort="9443"> 
+        </httpEndpoint> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <virtualHost id="default_host"> 
+        </virtualHost> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="com.ibm.websphere.appserver.httptransport-1.0"> 
+        <variable name="defaultHTTPVar" value="defaultHttpOptions"> 
+        </variable> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="io.openliberty.servlet.internal-6.0"> 
+        <webContainer> 
+        </webContainer> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="io.openliberty.servlet.internal-6.0"> 
+        <javaPermission name="org.glassfish.web.rfc2109_cookie_names_enforced" className="java.util.PropertyPermission" id="org.glassfish.web.rfc2109_cookie_names_enforced" actions="read"> 
+        </javaPermission> 
+    </defaultInstance> 
+    <defaultInstance providingFeatures="io.openliberty.springBootHandler-3.0"> 
+        <classloading useJarUrls="true"> 
+        </classloading> 
+    </defaultInstance> 
+</defaultConfiguration> 
+</featureInfo>

@@ -1,0 +1,22 @@
+********************************************************************************
+product = Open Liberty 24.0.0.5 (wlp-1.0.89.cl240520240506-1951)
+wlp.install.dir = /Users/grvuolo/Library/CloudStorage/Box-Box/Lab/wsa-spgi-lab/spring-liberty/target/liberty/wlp/
+server.output.dir = /Users/grvuolo/Library/CloudStorage/Box-Box/Lab/wsa-spgi-lab/spring-liberty/target/liberty-alt-output-dir/defaultServer/
+java.home = /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+java.version = 21.0.2
+java.runtime = OpenJDK Runtime Environment (21.0.2+13-LTS)
+os = Mac OS X (14.4.1; aarch64) (en_ES)
+process = 95328@Giovannis-MacBook-Pro.local
+Classpath = /Users/grvuolo/Library/CloudStorage/Box-Box/Lab/wsa-spgi-lab/spring-liberty/target/liberty/wlp/bin/tools/ws-server.jar
+Java Library path = /Users/grvuolo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+********************************************************************************
+[5/28/24, 11:25:49:828 CEST] 00000015 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[5/28/24, 11:25:50:104 CEST] 0000002a com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /Users/grvuolo/Library/CloudStorage/Box-Box/Lab/wsa-spgi-lab/spring-liberty/target/liberty/wlp/usr/servers/defaultServer/configDropins/defaults/install_apps_configuration_1491924271.xml
+[5/28/24, 11:25:50:200 CEST] 00000015 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 0.55 seconds
+[5/28/24, 11:25:50:207 CEST] 00000037 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[5/28/24, 11:25:50:251 CEST] 00000037 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [servlet-6.0, springBoot-3.0].
+[5/28/24, 11:25:50:252 CEST] 00000037 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 0.052 seconds.
+[5/28/24, 11:25:50:252 CEST] 00000037 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0026I: The server defaultServer is ready to build a smaller package.
+[5/28/24, 11:25:50:254 CEST] 00000038 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[5/28/24, 11:25:50:255 CEST] 00000038 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[5/28/24, 11:25:50:295 CEST] 00000015 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server defaultServer stopped after 0.645 seconds.

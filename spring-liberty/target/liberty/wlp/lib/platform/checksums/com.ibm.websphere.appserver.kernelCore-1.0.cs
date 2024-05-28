@@ -1,0 +1,27 @@
+#Mon May 06 22:00:09 BST 2024
+lib/com.ibm.ws.diagnostics_1.0.89.jar=c9442a7259680c5c63ff4aa25c5f99c5
+lib/com.ibm.ws.kernel.service_1.3.89.jar=3aa198ede144250a3968cb433f117d00
+lib/com.ibm.ws.kernel.metatype.helper_1.0.89.jar=2ff2ded00357901f248a5c5796862d2a
+lib/com.ibm.ws.org.apache.aries.util_1.0.89.jar=6b63c3dd2ce39348c371a9e56c6eefbd
+lib/com.ibm.ws.event_1.0.89.jar=ffc5fac3a4e7eb0c5c34d6e4838cef5f
+lib/com.ibm.ws.threading_1.1.89.jar=da39836bcef38b227c694efc7cabe970
+lib/com.ibm.ws.org.eclipse.equinox.coordinator_1.0.89.jar=bce43abda4190a0904ec4781380aedfa
+lib/com.ibm.ws.org.apache.felix.scr_1.0.89.jar=896bcd43053425d8f6d39eb585e860b6
+lib/com.ibm.ws.org.apache.aries.jmx.api_1.0.89.jar=d10081a6e0ef8137d217545e257464f5
+lib/com.ibm.ws.config_1.0.89.jar=56c25063fea90d98be51590ab08b8d29
+lib/platform/kernelCore-1.0.mf=11767d0b5491d1d9afc86594d911c568
+lib/com.ibm.ws.org.eclipse.equinox.region_1.0.89.jar=e2fb0700d580fbd1713b9361253f65ae
+lib/com.ibm.ws.kernel.equinox.module_1.0.89.jar=b17fe3d156523737996aa466edad4e79
+lib/io.openliberty.checkpoint_1.0.89.jar=5348abb1e1fd5cd942be656593d39a92
+lib/com.ibm.ws.runtime.update_1.0.89.jar=2eb767d1b27b9e33e1bef0d48c254b48
+lib/com.ibm.ws.kernel.feature_1.0.89.jar=b7eecfff277833266b1cfb7637926ebd
+lib/com.ibm.ws.org.jboss.jandex_1.0.89.jar=244255e1f91b927425c9f92363b1cf3c
+lib/org.eclipse.osgi_3.18.600.jar=164fa8ca074cf95ea3938ed67168e69b
+lib/com.ibm.ws.jmx_1.0.89.jar=ad0f3a27d273d52c5928376b4c1922ea
+lib/com.ibm.ws.kernel.filemonitor_1.0.89.jar=879dd281607077cb1d893f52345f4f56
+lib/com.ibm.ws.org.apache.aries.jmx.core.whiteboard_1.0.89.jar=680da96399c918accd06762bd244a0ea
+lib/com.ibm.ws.org.objectweb.asm_1.0.89.jar=07f4ea4ba27ed861ca2b189050a38bf8
+lib/io.openliberty.reporting.internal_1.0.89.jar=93f4d83ccba76c205883fac652a487e7
+lib/com.ibm.ws.crypto.passwordutil_1.0.89.jar=fc587e46a6b82bc039323e1b4fc47fce
+lib/com.ibm.json4j_1.0.89.jar=09caf4e4a0b867656911829fce88bdb9
+lib/com.ibm.ws.org.eclipse.equinox.metatype_1.0.89.jar=1aa37dff3098d3613097b8513ec9cf49

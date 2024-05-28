@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+    <springBootApplication id="guide-spring-boot" location="thin-guide-spring-boot-0.1.0.jar" name="guide-spring-boot"/>
+</server>

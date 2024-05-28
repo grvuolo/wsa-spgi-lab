@@ -1,0 +1,3 @@
+CWWKG0030E: Pid reference com.ibm.ws.jca.resourceAdapter listed on ibm:reference extension does not exist.
+CWWKG0030E: Pid reference com.ibm.ws.security.jca.internal.authdata.config listed on ibm:reference extension does not exist.
+CWWKG0109I: The schema was created in the [/Users/grvuolo/Library/CloudStorage/Box-Box/Lab/wsa-spgi-lab/spring-liberty/.libertyls/ol-24.0.0.4.xsd] file.
