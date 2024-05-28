@@ -1,9 +1,13 @@
-apiVersion: apps.openliberty.io/v1
-kind: OpenLibertyApplication
+apiVersion: liberty.websphere.ibm.com/v1
+kind: WebSphereLibertyApplication
 metadata:
   name: springboot
   namespace: spring-liberty
 spec:
+  license:
+    accept: true
+    edition: IBM WebSphere Application Server
+    productEntitlementSource: Standalone
   applicationImage: image-registry.openshift-image-registry.svc:5000/spring-liberty/springboot:24.0.0.3
   pullPolicy: Always
   serviceAccountName: spring-liberty
