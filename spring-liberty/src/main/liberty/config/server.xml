@@ -4,6 +4,8 @@
     <featureManager>
         <feature>servlet-6.0</feature>
         <feature>springBoot-3.0</feature>
+        <feature>usageMetering-1.0</feature>
+        <feature>transportSecurity-1.0</feature>
     </featureManager>
 
     <httpEndpoint id="defaultHttpEndpoint"
@@ -11,8 +13,15 @@
                   httpPort="9080"
                   httpsPort="9443" />
 
+    <keyStore id="meteringKeyStore" password="changeMe" location="key.p12" type="PKCS12" />
+    <ssl id="meteringSSL" keyStoreRef="meteringKeyStore" trustStoreRef="meteringKeyStore" sslProtocol="TLSv1.2" />
+
     <springBootApplication id="guide-spring-boot" 
                            location="thin-guide-spring-boot-0.1.0.jar"
                            name="guide-spring-boot" />
+
+    <usageMetering url="https://cpd-websphere-automation.apps.ocp.ibm.edu/websphereauto/meteringapi" 
+                   sslRef="meteringSSL" 
+                   apiKey="sBiIi5GBBjLSpyUOl6iLyDPik8rrcER1q60jIhF40ohFOQvN28/NQ7WmHMgpnIV4rcnmKyUdkbVPCp/I7gIQWEBu5NlzmviFGRlo7ajeIk9Byqmpx2auHmQVPFp2LTHnhbl3pFh1pk00HR4OThM/1Rjl+jcmRYiu3THxhjqDEd0BKASidg2eAXfItHvLSS3ZBUSMVVoGIMFFklzLt+c7hF9SN5MsZkE6j1z7CSFHgKhMOn1j/UAos8cS8dq3vQOpDi0pXBFHiGjXvsZ63Fgf9Z5D5t7zayrjAEBxRmj3VgYq+RULaO7QQpBr6CbOk/81ejFmQXqRxdi9/h7lw3cZVcSD7xZMtarwvIUbIxJidGTHYxOaZKF4MG67wuBx39VwCPGOA9k/Mu3JAsMJ25L+FPJlWjUApGWczJSDBH78tZ/1cec9dKyndAfrO0rrTAmI7MhKCI9ZFnzWBSop2PfmBkCQZkAoQOi76/wNaAw3HzCwOgRfW4nPa1RGgCYrDHOFIjIk1Rlq/wR9JAgnUrJDxUE149Z6rOu6OmULDLxU9eBT7hZPRiUoJfji3vwHPx5oQlhl6b4ieoFMoxid5XiEsAg9AwSbIHcN49uMdY4p3nUSRBsb9XApQyHabtGq3Gs/fCv54npEz+Y6NjNuqcqQj/v54Bk++gq6UUekCs3nMjywoS/WK5j3Lm547p/7fEVs2rtYGiH0KL9s3giHxsyLGPSlP8dzdv7BqsX7CFWrgfweHcrGovxq1j7K90xZPaTCwLDHFQdPHLF5pVuV3Zt7xwGN7cguwRU1GlB5DJsCHNjThLztyNKeZJl3f9GZqMb838qvTH353skAzcYjYv2ebkW6vo9ToVnUV9L7+SkS41QYvsFslRUR7QxYJZxm1+X8huLozCi+ZKtVwIpRLv4yftlCpU0NTuQ2IFbelSfLJIfAB1hi1ulu2zE/fhknz3abzraYkCwGJD09PDsM5Ff5QkLahZUKDMW1mfmkAP7bONWX3ZrAuPMQqZh4YObF97H9DDF94+83ETbLbCp0E+ODBhRKOByTvIIId5RKrRedOknsdb3adDva7wOzI+7c+Zp8yWo+SqCDCRwxjZYi4Mx4qg3MwHoU7h0AsVvH0tioQr5H4n8uNADnDKGJRNxMH9/GE2JoR9a2IK5KciMOjUwH9yaY9l8ZiqFJ6IYfU3xy7rJLLrubk9/HkxmCJVYezmjX2S06RKg7NKXlgexIj7RTesUpvUhbFoXPByAkQUxv+7rZEWVoFK7bwPKU80iSjiKYJurz/C15S+1+0OaQZKq+i2tJuNJOnhKLQWHRK4VvC/4a2FI2m1JHih4jWilS6Xbb3F8D4oucT+tnU42h0u3XlPY7oLo4Bd27lsJTeKETojP03E6BGm2oYsvgVNaIDY2uDH7758wsiPI4SbcGLsnKju2DXfQG+JcCl0AqNV/HyjZEIxQM/HaAmbHmB5rY5QuETFPtFUFiOznng17j/j/73PzK6edDYvqaKYCQDq9R5UIQonBkcHSX5619xqSwAQtgeIxTvvXpLtLCyG5ihq1xkJaxE1hEFawgdHKKf9ql2R2DYfT7tOP8GLDRgHKf05HmRENih5vcNK07K2aFaUV2JpnQyZmHmvEMkCYEUYo35Pfzhc/2Vh1D8LDnJ1QmdVIV56cMzdvMVp82kL9lAvOFZtZd48yqvF+JUod8jOpqisyOCwL01gocJGlPJFSF2Z2Ak2flB9bz8VOhgnA1DoZTSWrl8wDDfjSX00xIvf8g3nthPWqaoq6RkNsmUE2GhPwu2uDKoyQjrlHRDJh/XbvLvrPIBqgQl2He4xo5F8kmzHg=" />
 
 </server>
