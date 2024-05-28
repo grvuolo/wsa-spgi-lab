@@ -41,8 +41,6 @@ COPY --chown=1001:0 src/main/liberty/config/server.xml /config/server.xml
 #RUN cp /opt/ol/wlp/templates/servers/springBoot3/server.xml /config/server.xml
 # end::serverXml[]
 
-COPY --chown=1001:0 key.p12 /opt/ibm/wlp/usr/servers/defaultServer/resources/security/
-
 RUN features.sh
 
 # tag::libcache[]
