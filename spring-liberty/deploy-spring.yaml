@@ -10,6 +10,9 @@ spec:
     productEntitlementSource: Standalone
   applicationImage: image-registry.openshift-image-registry.svc:5000/spring-liberty/springboot:24.0.0.3
   pullPolicy: Always
+  env:
+    - name: CONTAINER_HOST
+      value: spring-liberty
   serviceAccountName: spring-liberty
 #  createKnativeService: true
   manageTLS: false
